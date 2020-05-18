@@ -19,7 +19,7 @@ body {
   background: gray;
   padding: 2em 0;
   text-align: center;
-  background:  #ff9900;
+  background:  dark-grey;
 
 }
 
@@ -30,7 +30,7 @@ form {
 input[type="text"] {
   width: 100%;
   box-sizing: border-box;
-  background: #ff9900;
+  background: #fa8072;
   color: #eee;
   padding: 10px;
   border: 0;
@@ -45,7 +45,7 @@ select {
   text-align: center;
   line-height: 2em;
   cursor: pointer;
-  background: #ff9900;
+  background: #fa8072;
   color: #fff;
 }
 
@@ -57,7 +57,7 @@ input[type="submit"] {
   text-align: center;
   line-height: 2em;
   border-radius: 5px;
-  background: #ff9900;
+  background: #fa8072;
   border: 0;
   color: #fff;
   font-weight: bold;
@@ -82,7 +82,7 @@ input[type="submit"] {
 .tasks li {
   text-decoration: none;
   margin: 0;
-  background: #ff9900;
+  background: #fa8072;
   padding: 1em;
   margin: 1em 0;
   border-radius: 0.7em;
