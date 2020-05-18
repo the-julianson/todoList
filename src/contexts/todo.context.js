@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useEffect } from "react";
 
 import todosReducer from "../reducers/todo.reducers";
 
-const defaultTodos = [{ id: 1, task: "sample", complete: false }];
+const defaultTodos = [{ id: 1, task: "", complete: false }];
 
 export const TodosContext = createContext();
 export const DispatchContext = createContext();
