@@ -7,7 +7,7 @@ function App() {
   const classes = makeStyles();
 
   return (
-    <div className="App">
+    <div className={classes.App}>
 
       <div className={classes.header}>
         <h1>

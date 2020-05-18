@@ -6,7 +6,7 @@ export default makeStyles({
     "& h1": {
       color: "#2c3e50",
       margin: "5vh 0 0 0",
-      fontSize: "5rem",
+      fontSize: "4rem",
       fontWeight: "300",
       "& span": {
         fontWeight: "700"
@@ -14,7 +14,7 @@ export default makeStyles({
     },
     "& h2": {
       color: "#2c3e50",
-      fontSize: "1.25rem",
+      fontSize: "1.15rem",
       fontWeight: "300"
     }
   }
