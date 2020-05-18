@@ -1,19 +1,17 @@
 import React from "react";
-
-import TodoList from './TodoList';
+import { TodosContextProvider } from "../contexts/todo.context";
+import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
 
-const TodoApp =() => {
-      
+function TodoApp() {
   return (
-    
-    <div className="App">
-      <div className='navbar'>
-           <h2>Comienza a agregar tus tareas</h2> 
-      </div>
+    <TodosContextProvider>
       <TodoForm/>
-      <TodoList/>
-    </div>
+      <TodoList />
+    </TodosContextProvider>
   );
 }
 export default TodoApp;
+
+
+

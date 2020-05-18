@@ -1,31 +1,37 @@
-import React, {useContext, useState} from 'react';
-import {TodosContext} from '../store/todo.context';
-import {actionTypes} from '../store/todo.actions';
+import React, { useState, useContext } from "react";
+import { TodosContext } from "../contexts/todo.context";
+import makeStyles from "../styles/TodoFormStyles";
+import { ADD_TODO } from "../constants/actions";
 
-const TodoForm = () => {
-    const [, dispatch ] = useContext(TodosContext)
+function useInputState(initialValue = "") {
+  const [value, setValue] = useState(initialValue);
+  const handleChange = e => setValue(e.target.value);
+  const clearValue = () => setValue("");
 
-    const [task, setTask] = useState('');
+  return [value, handleChange, clearValue];
+}
 
-const handleSubmit = e => {
-  e.preventDefault();
-  debugger;
-  dispatch({type: actionTypes.ADD_TODO, payload: task})
-  setTask('');
-};
-    return (
-<form onSubmit={handleSubmit}>
-        <input 
-        type="text" 
-        placeholder="Aun me falta hacer...."
-        value={task}
-        onChange={(e)=> {
-          debugger;
-          setTask(e.target.value);}}
-        required
-        ></input>
-        <input type="submit" value="Agregar mi tarea"></input>
-      </form>
-    )
+function TodoForm() {
+  const { dispatch } = useContext(TodosContext);
+  const [value, handleChange, clearValue] = useInputState();
+  const classes = makeStyles();
+
+  return (
+    <form 
+    onSubmit={(e)=> {
+        e.preventDefault();
+        dispatch({type: ADD_TODO, payload: value});
+        clearValue();
+    } }>
+      <input
+        type="text"
+        placeholder="Hoy tengo que..."
+        value={value}
+        onChange={handleChange}
+        className={classes.input}
+      />
+    </form>
+  );
 }
 export default TodoForm;
+

@@ -1,31 +1,17 @@
 import React, { useContext } from "react";
-import { TodosContext } from "../store/todo.context";
-import { actionTypes } from "../store/todo.actions";
 
-const TodoList = ({ id, task, completed }) => {
-  const [state, dispatch] = useContext(TodosContext);
+import Todo from './Todo';
+import { TodosContext } from "../contexts/todo.context";
+
+function TodoList() {
+  const { todos } = useContext(TodosContext);
 
   return (
-    <div className="tasks">
-      <ul>
-        {state.map((todo, index) => {
-            
-          function handleClick() {
-            console.log(index);
-            dispatch({
-              type: actionTypes.COMPLETE_TODO,
-              payload: index
-            });
-          }
-          console.log(todo.id);
-          return (
-            <li key={todo.id} onClick={handleClick}>
-              {todo.task}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <ul style={{ paddingLeft: 10, width: "95%", color: '#2c3e50' }}>
+      {todos.map(todo => (
+       <Todo key={todo.id} todo={todo}/>
+      ))}
+    </ul>
   );
-};
+}
 export default TodoList;

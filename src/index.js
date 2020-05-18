@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import TodoApp from './components/TodoApp';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import TodosContextProvider from './store/todo.context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TodosContextProvider>
-    <TodoApp />
-    </TodosContextProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
